@@ -1,6 +1,6 @@
 # grunt-blink1
 
-> Configure blink(1) inside your Gruntfile.
+> Configures blink(1) inside your Gruntfile.
 
 ## Getting Started
 _If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide._
