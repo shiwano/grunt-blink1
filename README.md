@@ -26,17 +26,17 @@ If the plugin has been installed correctly, running `grunt --help` at the comman
 ## The "blink1" task
 
 ### Overview
-In your project's Gruntfile, add a section named `yaml` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `blink1` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
   blink1: {
     your_target: {
-      colors: ['red', 'black', 'green']
+      colors: ['red', '#000', 'rgb(0, 255, 0)'],
       turnOff: true,
       fadeMillis: 200
-    },
-  },
+    }
+  }
 })
 ```
 
@@ -46,7 +46,7 @@ grunt.initConfig({
 Type: `String` or `Array`
 Default value: None (Required)
 
-Colors that is given to blink(1) for blink. [CSS color string](http://www.w3.org/TR/CSS21/syndata.html#color-units) is available.
+A value that is given to blink(1) for blink. [CSS color string](http://www.w3.org/TR/CSS21/syndata.html#color-units) is available.
 
 #### turnOff
 Type: `Boolean`
@@ -65,6 +65,22 @@ Type: `Function`
 Default value: `undefined`
 
 A Function to select a device which is used by this task. It takes `devices` arguments.
+
+## Examples
+
+```js
+grunt.initConfig({
+  blink1: {
+    green: {
+      colors: 'green'
+    },
+    red: {
+      colors: 'red'
+    }
+  }
+});
+grunt.registerTask('test', ['blink1:red', 'simplemocha', 'blink1:green']);
+```
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][].

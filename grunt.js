@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     blink1: {
       example: {
-        colors: ['green', 'black', 'red'],
+        colors: ['red', '#000', 'rgb(0, 255, 0)'],
         turnOff: true,
         fadeMillis: 200
       }
