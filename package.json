@@ -30,13 +30,18 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt": "~0.3.17"
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-nodeunit": "~0.1.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
   },
   "keywords": [
     "gruntplugin"
   ],
   "dependencies": {
-    "node-blink1": "0.0.2",
+    "node-blink1": "~0.0.3",
     "color": "~0.4.1",
     "async": "~0.1.22"
   }
