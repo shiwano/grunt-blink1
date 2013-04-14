@@ -21,8 +21,7 @@
       "url": "https://github.com/shiwano/grunt-blink1/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "grunt.js",
-  "bin": "bin/grunt-blink1",
+  "main": "Gruntfile.js",
   "engines": {
     "node": ">= 0.8.0"
   },
