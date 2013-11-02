@@ -29,19 +29,19 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt": "~0.4.0",
-    "grunt-contrib-jshint": "~0.4.3",
-    "grunt-contrib-nodeunit": "~0.1.2"
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-nodeunit": "~0.2.2"
   },
   "peerDependencies": {
-    "grunt": "~0.4.0"
+    "grunt": "~0.4.1"
   },
   "keywords": [
     "gruntplugin"
   ],
   "dependencies": {
-    "node-blink1": "~0.0.3",
-    "color": "~0.4.1",
-    "async": "~0.1.22"
+    "node-blink1": "~0.1.1",
+    "color": "~0.4.4",
+    "async": "~0.2.9"
   }
 }
