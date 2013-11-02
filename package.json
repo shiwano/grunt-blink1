@@ -42,6 +42,7 @@
   "dependencies": {
     "node-blink1": "~0.1.1",
     "color": "~0.4.4",
-    "async": "~0.2.9"
+    "async": "~0.2.9",
+    "lodash": "~2.2.1"
   }
 }
