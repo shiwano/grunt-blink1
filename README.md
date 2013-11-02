@@ -87,6 +87,7 @@ grunt.registerTask('test', ['blink1:red', 'mochaTest', 'blink1:green']);
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][].
 
 ## Release History
+ * 2013-11-02   v0.2.0   Change API.
  * 2013-11-02   v0.1.2   Update module dependencies.
  * 2013-04-14   v0.1.1   Support Node v0.10.x and Grunt v0.4.x.
  * 2012-12-29   v0.1.0   First release.
