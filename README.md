@@ -60,12 +60,6 @@ Default value: `0`
 
 A value determining how long the blink(1) will change.
 
-#### pickDevice
-Type: `Function`
-Default value: `undefined`
-
-A Function to select a device which is used by this task. It takes `devices` arguments.
-
 ## Examples
 
 ```js

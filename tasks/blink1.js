@@ -11,28 +11,38 @@ module.exports = function (grunt) {
   var async = require('async'),
       Color = require('color'),
       Blink1 = require('node-blink1'),
-      _ = (typeof grunt.utils === 'undefined') ? grunt.util._ : grunt.utils._;
+      _ = require('lodash'),
+      _blink1;
+
+  var getBlink1 = function() {
+    if (!_.isUndefined(_blink1)) {
+      return _blink1;
+    }
+
+    if (_.isEmpty(Blink1.devices())) {
+      return null;
+    } else {
+      _blink1 = new Blink1.Blink1();
+      return _blink1;
+    }
+  };
 
   grunt.registerMultiTask('blink1', 'Blink a specific color on blink(1)', function() {
     var colors = (_.isArray(this.data.colors)) ? this.data.colors : [this.data.colors || 'black'],
         fadeMillis = this.data.fadeMillis || 0,
         turnOff = this.data.turnOff || false,
-        devices = Blink1.devices(),
-        serialNumber;
+        blink1 = getBlink1();
 
-    if (_.isEmpty(devices)) {
+    if (_.isNull(blink1)) {
       grunt.log.writeln('No blink(1)\'s could be found.');
       return;
-    } else if (_.isFunction(this.data.pickDevice)) {
-      serialNumber = this.data.pickDevice(devices);
     }
 
     if (turnOff) {
       colors.push('black');
     }
 
-    var blink1 = new Blink1.Blink1(serialNumber),
-        taskDone = this.async();
+    var taskDone = this.async();
 
     async.forEachSeries(colors, function (color, done) {
       var c = new Color(color);
