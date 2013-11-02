@@ -80,7 +80,7 @@ grunt.initConfig({
     }
   }
 });
-grunt.registerTask('test', ['blink1:red', 'mochaTest', 'blink1:green']);
+grunt.registerTask('test', ['blink1:red', 'mochacli', 'blink1:green']);
 ```
 
 ## Contributing
