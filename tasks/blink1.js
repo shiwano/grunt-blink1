@@ -32,7 +32,9 @@ module.exports = function (grunt) {
       fadeMillis: 0,
       turnOff: false
     });
-    var colors = (_.isArray(this.data.colors)) ? this.data.colors : [this.data.colors || 'black'];
+    var colors = [this.data.color || 'black'];
+    colors = (_.isArray(this.data.colors)) ? this.data.colors : colors;
+
     var blink1 = getBlink1();
 
     if (_.isNull(blink1)) {

@@ -37,6 +37,9 @@ grunt.initConfig({
         turnOff: true,
         fadeMillis: 200
       }
+    },
+    your_target2: {
+      color: 'green'
     }
   }
 })
@@ -44,9 +47,9 @@ grunt.initConfig({
 
 ### Properties
 
-#### colors
+#### color or colors
 Type: `String` or `Array`
-Default value: None (Required)
+Default value: `"black"`
 
 A value that is given to blink(1) for blink. [CSS color string](http://www.w3.org/TR/CSS21/syndata.html#color-units) is available.
 
@@ -70,14 +73,14 @@ A value determining how long the blink(1) will change.
 grunt.initConfig({
   blink1: {
     green: {
-      colors: 'green'
+      color: 'green'
     },
     red: {
-      colors: 'red'
+      color: 'red'
     }
   }
 });
-grunt.registerTask('test', ['blink1:red', 'simplemocha', 'blink1:green']);
+grunt.registerTask('test', ['blink1:red', 'mochaTest', 'blink1:green']);
 ```
 
 ## Contributing
