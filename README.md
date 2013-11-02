@@ -33,8 +33,10 @@ grunt.initConfig({
   blink1: {
     your_target: {
       colors: ['red', '#000', 'rgb(0, 255, 0)'],
-      turnOff: true,
-      fadeMillis: 200
+      options: {
+        turnOff: true,
+        fadeMillis: 200
+      }
     }
   }
 })
@@ -48,13 +50,15 @@ Default value: None (Required)
 
 A value that is given to blink(1) for blink. [CSS color string](http://www.w3.org/TR/CSS21/syndata.html#color-units) is available.
 
-#### turnOff
+### Options
+
+#### options.turnOff
 Type: `Boolean`
 Default value: `false`
 
 If this value is true, blink(1) turns off at last.
 
-#### fadeMillis
+#### options.fadeMillis
 Type: `Number`
 Default value: `0`
 

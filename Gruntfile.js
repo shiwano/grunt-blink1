@@ -6,8 +6,10 @@ module.exports = function(grunt) {
     blink1: {
       example: {
         colors: ['red', '#000', 'rgb(0, 255, 0)'],
-        turnOff: true,
-        fadeMillis: 200
+        options: {
+          turnOff: true,
+          fadeMillis: 200
+        }
       }
     },
     nodeunit: {

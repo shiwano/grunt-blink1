@@ -28,17 +28,19 @@ module.exports = function (grunt) {
   };
 
   grunt.registerMultiTask('blink1', 'Blink a specific color on blink(1)', function() {
-    var colors = (_.isArray(this.data.colors)) ? this.data.colors : [this.data.colors || 'black'],
-        fadeMillis = this.data.fadeMillis || 0,
-        turnOff = this.data.turnOff || false,
-        blink1 = getBlink1();
+    var options = this.options({
+      fadeMillis: 0,
+      turnOff: false
+    });
+    var colors = (_.isArray(this.data.colors)) ? this.data.colors : [this.data.colors || 'black'];
+    var blink1 = getBlink1();
 
     if (_.isNull(blink1)) {
       grunt.log.writeln('No blink(1)\'s could be found.');
       return;
     }
 
-    if (turnOff) {
+    if (options.turnOff) {
       colors.push('black');
     }
 
@@ -47,8 +49,8 @@ module.exports = function (grunt) {
     async.forEachSeries(colors, function (color, done) {
       var c = new Color(color);
 
-      if (fadeMillis > 0) {
-        blink1.fadeToRGB(fadeMillis, c.red(), c.green(), c.blue(), done);
+      if (options.fadeMillis > 0) {
+        blink1.fadeToRGB(options.fadeMillis, c.red(), c.green(), c.blue(), done);
       } else {
         blink1.setRGB(c.red(), c.green(), c.blue(), done);
       }
