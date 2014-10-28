@@ -30,7 +30,8 @@ module.exports = function (grunt) {
   grunt.registerMultiTask('blink1', 'Blink a specific color on blink(1)', function() {
     var options = this.options({
       fadeMillis: 0,
-      turnOff: false
+      turnOff: false,
+      ledIndex: 0
     });
     var colors = [this.data.color || 'black'];
     colors = (_.isArray(this.data.colors)) ? this.data.colors : colors;
@@ -52,7 +53,7 @@ module.exports = function (grunt) {
       var c = new Color(color);
 
       if (options.fadeMillis > 0) {
-        blink1.fadeToRGB(options.fadeMillis, c.red(), c.green(), c.blue(), done);
+        blink1.fadeToRGB(options.fadeMillis, c.red(), c.green(), c.blue(), options.ledIndex, done);
       } else {
         blink1.setRGB(c.red(), c.green(), c.blue(), done);
       }
